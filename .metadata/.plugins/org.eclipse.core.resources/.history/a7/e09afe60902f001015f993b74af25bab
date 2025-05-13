@@ -1,0 +1,47 @@
+package gerenciadortarefas;
+
+import service.TaskService;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        TaskService taskService = new TaskService();
+        Scanner scanner = new Scanner(System.in);
+        int option;
+        
+        System.out.println("\n1. Adicionar Tarefa\n2. Listar Tarefas\n3. Concluir Tarefa\n0. Sair");
+        
+        do {
+            System.out.println("\nDigite uma opção: ");
+            option = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (option) {
+                case 1:
+                    System.out.print("Título: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Descrição: ");
+                    String desc = scanner.nextLine();
+                    taskService.addTask(title, desc);
+                    break;
+                case 2:
+                    taskService.listTasks();
+                    break;
+                case 3:
+                    System.out.print("Título da tarefa a concluir: ");
+                    String completeTitle = scanner.nextLine();
+                    taskService.completeTask(completeTitle);
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (option != 0);
+
+        scanner.close();
+    }
+}
+

@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\lgca1\OneDrive\Área de Trabalho\gerenciador-de-tarefas\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1824287549.index
+1040184557.index
